@@ -1,0 +1,43 @@
+{% extends 'flatpages/default.html' %}
+ 
+{% block title %}{% endblock title %}
+ 
+{% block content %}
+<h2>&nbsp;</h2>
+<h2><i>Вы действительно хотите удалить?</i></h2>
+<h2>&nbsp;</h2>
+<table>
+    <thead>
+        <th>
+            Категория
+        </th>
+        <th>
+            Источник
+        </th>
+        <th>
+            Дата
+        </th>
+        <th>
+            Название
+        </th>
+    </thead>
+    <tr>
+        <td>
+            {{ post.category.name|title }}
+        </td>
+        <td>
+            {{ post.source.name|title }}
+        </td>
+        <td>
+            {{ post.date }}
+        </td>
+        <td>
+            {{ post.name }}
+        </td>
+    </tr>
+</table>
+ 
+<form method="POST">
+    {% csrf_token %}
+    <input type="submit" value="подтвердить"></form>
+{% endblock content %} 

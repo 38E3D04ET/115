@@ -1,0 +1,45 @@
+{% extends 'flatpages/default.html' %}
+ 
+{% block title %} Product list {% endblock title %}
+ 
+{% block content %}
+<h2>&nbsp;</h2>
+<h2><i>Подробности</i></h2>
+<h2>&nbsp;</h2>
+<table>
+    <thead>
+        <th>
+            Категория
+        </th>
+        <th>
+            Источник
+        </th>
+        <th>
+            Дата
+        </th>
+        <th>
+            Имя
+        </th>
+        <th>
+            Текст
+        </th>
+    </thead>
+    <tr>
+        <td>
+            {{ post.category|title }}
+        </td>
+        <td>
+            {{ post.source.name|title }}
+        </td>
+        <td>
+            {{ post.date }}
+        </td>
+        <td>
+            {{ post.name }}
+        </td>
+        <td>
+            {{ post.description }}
+        </td>
+    </tr>
+</table>
+{% endblock content %}
